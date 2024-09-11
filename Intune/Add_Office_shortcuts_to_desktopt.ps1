@@ -1,4 +1,5 @@
-﻿$TargetFile0  = "C:\Program Files\Microsoft Office\root\Office16\excel.exe"
+## Skript pro přidání ikon Office + Edge na plochu všem uživatelům PC. Přidat do Intune jako platform skript a spouštět jako systémový uživatel v 64bit kontextu.
+$TargetFile0  = "C:\Program Files\Microsoft Office\root\Office16\excel.exe"
 $TargetFile1  = "C:\Program Files\Microsoft Office\root\Office16\winword.exe"
 $TargetFile2  = "C:\Program Files\Microsoft Office\root\Office16\powerpnt.exe"
 $TargetFile5  = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
