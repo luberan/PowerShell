@@ -1,3 +1,15 @@
+$registryPaths = @(
+    "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced",
+    "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager",
+    "HKCU:\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement",
+    "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo",
+    "HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy"
+)
+foreach ($path in $registryPaths) {
+    if (!(Test-Path $path)) {
+        New-Item -Path $path -Force | Out-Null
+    }
+}
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications" -Value "0" -Type "dword"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Value "0" -Type "dword"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Value "0" -Type "dword"
